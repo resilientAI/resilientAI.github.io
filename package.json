@@ -1,14 +1,17 @@
 {
   "name": "resilientai.github.io",
   "version": "1.0.0",
-  "description": "The resilientAI SaaS application using React and Tailwind CSS. Your site is live at https://resilientai.github.io/",
+  "homepage": "https://resilientai.github.io",
+  "description": "The resilientAI SaaS application using React and Tailwind CSS. The site is live at https://resilientai.github.io/",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+  "deploy": "next build && next export && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +41,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2"
+    "@types/react-dom": "^19.0.2",
+    "gh-pages": "^6.2.0"
   }
 }
